@@ -8,7 +8,6 @@ fn main() {
 
 fn guessing_number() {
     let secret_number = rand::thread_rng().gen_range(1..=100);
-    println!("The secret Number is: {secret_number}");
 
     loop {
         println!("Input a Number to guess!");
