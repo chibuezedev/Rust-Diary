@@ -1,7 +1,5 @@
 use rand::Rng;
-use std::arch::x86_64;
 use std::cmp::Ordering;
-use std::num::NonZeroI32;
 use std::{i64, io};
 
 fn main() {
