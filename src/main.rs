@@ -3,7 +3,10 @@ use std::cmp::Ordering;
 use std::{i64, io, str};
 
 fn main() {
-    counter_function()
+    collectin_loop()
+    // while_loop()
+    // increment_loop()
+    // counter_function()
     // control_flow()
     // expression();
     // functions(6);
@@ -124,16 +127,57 @@ fn control_flow() {
     }
 }
 
-
-fn counter_function(){
+fn counter_function() {
     let mut _counter = 0;
 
     let result = loop {
-         _counter += 1;
+        _counter += 1;
 
         if _counter == 12 {
             break _counter * 12;
         }
     };
     println!("Result is {result}")
+}
+
+fn increment_loop() {
+    let mut counter = 0;
+
+    'counting_up: loop {
+        println!("Current Count is {counter}");
+        let mut remaining = 10;
+        loop {
+            println!("Remaining: {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if counter == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        counter += 1;
+    }
+    println!("End Count is {counter}");
+}
+
+fn while_loop() {
+    let x: i64 = 5;
+
+    let mut x = x;
+    while x != 0 {
+        println!("{x}!");
+        x -= 1;
+    }
+    println!("LFG!!!!")
+}
+
+fn collectin_loop() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("index {}", a[index]);
+        index += 1
+    }
 }
