@@ -1,9 +1,13 @@
 use rand::Rng;
 use std::cmp::Ordering;
-use std::{i64, io};
+use std::{i64, io, str};
 
 fn main() {
-    array_check();
+    counter_function()
+    // control_flow()
+    // expression();
+    // functions(6);
+    // array_check();
     // guessing_number()
     // variable()
 }
@@ -82,4 +86,54 @@ fn array_check() {
     let element = array[index];
 
     println!("The value of the element at the index: {index} is {element}")
+}
+
+//functions
+
+fn functions(x: i32) {
+    println!("Here is the function with parameter x: {x}");
+}
+fn one() -> i32 {
+    if 5 > 4 { 6 } else { 0 }
+}
+
+fn expression() {
+    let y = {
+        let x = 6;
+        x + 54
+    };
+    println!("The vaule is: {y}");
+
+    let y = one();
+    println!("Value of return function {y}")
+}
+
+// control flow
+
+fn control_flow() {
+    let number = 12;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is not divisible by 4, 3, or 2");
+    }
+}
+
+
+fn counter_function(){
+    let mut _counter = 0;
+
+    let result = loop {
+         _counter += 1;
+
+        if _counter == 12 {
+            break _counter * 12;
+        }
+    };
+    println!("Result is {result}")
 }
