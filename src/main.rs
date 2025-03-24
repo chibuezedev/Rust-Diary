@@ -1,9 +1,12 @@
 use rand::Rng;
+use std::arch::x86_64;
 use std::cmp::Ordering;
-use std::io;
+use std::num::NonZeroI32;
+use std::{i64, io};
 
 fn main() {
-    guessing_number()
+    // guessing_number()
+    variable()
 }
 
 fn guessing_number() {
@@ -18,7 +21,7 @@ fn guessing_number() {
             .expect("Failed to read line!");
         println!("You guessed: {}", guess);
 
-        let guess: u32 = match guess.trim().parse(){
+        let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
@@ -32,4 +35,24 @@ fn guessing_number() {
             }
         }
     }
+}
+
+fn variable() {
+    let x = 5;
+    println!("Value is: {x}");
+    let x: i64 = 7;
+    println!("value is before scope: {x}");
+    {
+        let x: i32 = 43;
+
+        println!("Value is after scope: {x}");
+    }
+    println!("value without scope: {x}");
+
+    let x: bool = true;
+
+    println!("value of boolean: {x}");
+
+    let x: f32 = 1.5;
+    println!("Value of float: {x}");
 }
