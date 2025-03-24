@@ -3,7 +3,7 @@ use std::cmp::Ordering;
 use std::{i64, io, str};
 
 fn main() {
-    collectin_loop()
+    // collectin_loop()
     // while_loop()
     // increment_loop()
     // counter_function()
@@ -179,5 +179,15 @@ fn collectin_loop() {
     while index < 5 {
         println!("index {}", a[index]);
         index += 1
+    }
+
+    let b = [00, 11, 22, 33, 44, 55];
+
+    for i in b {
+        println!("Index Numbers is: {i}");
+    }
+
+    for number in 1..9 {
+        println!("Number in array {number}");
     }
 }
